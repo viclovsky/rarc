@@ -72,7 +72,7 @@ traits: !include /traits.yaml
           description: Validation error
           body:
             application/json:
-              schema: !include schemas/messageResp.json
+              schema: !include schemas/duplicate/messageResp.json
 /rpc_api:
   description: Some rpc deep api
   /{uid}/:
@@ -162,18 +162,56 @@ traits: !include /traits.yaml
         description: it's duplicate
         body:
           application/json:
-            schema: !include schemas/messageResp.json
+            schema: !include schemas/duplicate/messageResp.json
   post:
     description: post with duplicate body and response
     body:
       application/json:
-        schema: !include schemas/messageResp.json
+        schema: !include schemas/duplicate/messageResp.json
     responses:
       200:
         description: it's duplicate
         body:
           application/json:
-            schema: !include schemas/messageResp.json
+            schema: !include schemas/duplicate/messageResp.json
+  put:
+   description: post with duplicate body and response
+   responses:
+     200:
+       description: it's duplicate
+       body:
+         application/json:
+           schema: !include schemas/duplicate/messageResp.json
+
+  /and:
+    post:
+      description: post with duplicate body and response
+      body:
+        application/json:
+          schema: !include schemas/duplicate/messageRespD.json
+      responses:
+        200:
+          description: it's duplicate
+          body:
+            application/json:
+              schema: !include schemas/duplicate/messageRespD.json
+
+# NOT WORK YET
+#/duplicate_body:
+#  post:
+#    description: post with duplicate body and response
+#    body:
+#      application/json:
+#        schema: !include schemas/messageResp.json
+#    responses:
+#      200:
+#  put:
+#   description: post with duplicate body and response
+#   body:
+#     application/json:
+#       schema: !include schemas/messageResp.json
+#   responses:
+#     200:
 
 /subfolder_schema_json:
   get:

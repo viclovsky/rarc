@@ -1,0 +1,12 @@
+{
+  "message" : "Requires authentication",
+  "status": {
+    "id": "sad"
+  },
+  "properties": {
+    "status": {
+      "id": "blah",
+      "message": "blah"
+    }
+  }
+}
